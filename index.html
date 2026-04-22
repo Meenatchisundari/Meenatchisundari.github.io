@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meenatchi Sundari — AI/ML Engineer</title>
+<meta name="description" content="AI/ML Engineer specialising in LLMs, RAG pipelines, and Generative AI. MSc Artificial Intelligence, Royal Holloway. Open to junior AI/ML roles in the UK.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #1a56db;
+    --blue-light: #eff6ff;
+    --blue-text: #1e3a6e;
+    --text: #111827;
+    --text2: #374151;
+    --text3: #6b7280;
+    --bg: #ffffff;
+    --bg2: #f9fafb;
+    --bg3: #f3f4f6;
+    --border: #e5e7eb;
+    --border2: #d1d5db;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-name { font-size: 15px; font-weight: 600; color: var(--text); letter-spacing: -0.2px; }
+  .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text3);
+    text-decoration: none;
+    transition: color .15s;
+  }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-cta {
+    background: var(--blue);
+    color: #fff !important;
+    padding: 7px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity .15s;
+  }
+  .nav-cta:hover { opacity: .88; }
+
+  /* HERO */
+  .hero { padding: 4.5rem 2.5rem 4rem; max-width: 860px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--blue-light);
+    color: var(--blue-text);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+    border: 1px solid #bfdbfe;
+  }
+  .hero-badge-dot {
+    width: 6px; height: 6px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.6px;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .hero-sub {
+    font-size: 15px;
+    color: var(--text2);
+    max-width: 580px;
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+  }
+  .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem; }
+  .pill {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 11px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    color: var(--text2);
+    background: var(--bg);
+  }
+  .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .btn-prim {
+    background: var(--blue);
+    color: #fff;
+    padding: 9px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity .15s;
+  }
+  .btn-prim:hover { opacity: .88; }
+  .btn-sec {
+    background: var(--bg);
+    color: var(--text2);
+    padding: 9px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--border2);
+    transition: border-color .15s, color .15s;
+  }
+  .btn-sec:hover { border-color: var(--blue); color: var(--blue); }
+  .stats-row {
+    display: flex;
+    gap: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .stat-val { font-size: 1.5rem; font-weight: 600; color: var(--text); letter-spacing: -0.3px; }
+  .stat-lbl { font-size: 12px; color: var(--text3); margin-top: 2px; }
+
+  /* SECTIONS */
+  .section-wrap { max-width: 860px; margin: 0 auto; padding: 3rem 2.5rem; }
+  .section-bg { border-top: 1px solid var(--border); background: var(--bg2); }
+  .section-white { border-top: 1px solid var(--border); background: var(--bg); }
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 2rem;
+  }
+  .section-head h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .section-head::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* EXPERIENCE */
+  .exp-row {
+    display: grid;
+    grid-template-columns: 175px 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .exp-row:last-child { border-bottom: 1px solid var(--border); }
+  .exp-period { font-size: 12px; color: var(--text3); margin-bottom: 4px; }
+  .exp-co { font-size: 11px; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: .05em; }
+  .exp-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .exp-type {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: var(--bg3);
+    color: var(--text3);
+    margin-bottom: 10px;
+  }
+  ul.blist { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  ul.blist li {
+    font-size: 13px;
+    color: var(--text2);
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.6;
+  }
+  ul.blist li::before {
+    content: '·';
+    position: absolute;
+    left: 2px;
+    color: var(--blue);
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  .num { font-weight: 600; color: var(--text); }
+
+  /* PROJECTS */
+  .proj-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .proj-card {
+    background: var(--bg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: background .15s;
+  }
+  .proj-card:hover { background: var(--bg2); }
+  .proj-tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-bottom: 7px;
+  }
+  .proj-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+  .proj-desc { font-size: 12.5px; color: var(--text3); line-height: 1.65; margin-bottom: 12px; flex: 1; }
+  .proj-metrics { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+  .pm {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: var(--blue-light);
+    color: var(--blue-text);
+  }
+  .proj-stack { font-size: 11px; color: var(--text3); margin-bottom: 10px; }
+  .proj-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--blue);
+    text-decoration: none;
+    margin-top: auto;
+  }
+  .proj-link:hover { text-decoration: underline; }
+  .proj-link svg { width: 11px; height: 11px; flex-shrink: 0; }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .skill-group {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+  .sg-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--text3);
+    margin-bottom: 10px;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .sk {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text2);
+  }
+
+  /* SPEAKING */
+  .speak-list {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .speak-item {
+    padding: 1.25rem 1.5rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+  .speak-item:last-child { border-bottom: none; }
+  .speak-dot {
+    width: 8px; height: 8px;
+    background: var(--blue);
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .speak-event { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .speak-desc { font-size: 12.5px; color: var(--text3); line-height: 1.6; }
+
+  /* EDUCATION */
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .edu-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+  .edu-inst {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--blue);
+    margin-bottom: 5px;
+  }
+  .edu-deg { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .edu-date { font-size: 12px; color: var(--text3); margin-bottom: 8px; }
+  .edu-detail { font-size: 12px; color: var(--text2); line-height: 1.7; }
+  .gpa-badge {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    background: var(--blue-light);
+    color: var(--blue-text);
+    border-radius: 4px;
+  }
+
+  /* CTA FOOTER */
+  .cta-strip {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    padding: 3.5rem 2.5rem;
+    text-align: center;
+  }
+  .cta-strip h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+    letter-spacing: -.3px;
+  }
+  .cta-strip p { font-size: 14px; color: var(--text3); margin-bottom: 1.5rem; }
+  .cta-links { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  .cta-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text2);
+    text-decoration: none;
+    padding: 9px 20px;
+    border: 1px solid var(--border2);
+    border-radius: 6px;
+    transition: all .15s;
+  }
+  .cta-link:hover { border-color: var(--blue); color: var(--blue); }
+
+  /* RESPONSIVE */
+  @media (max-width: 680px) {
+    nav { padding: 0 1.25rem; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    h1 { font-size: 1.75rem; }
+    .section-wrap { padding: 2rem 1.25rem; }
+    .exp-row { grid-template-columns: 1fr; gap: 0.5rem; }
+    .proj-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .stats-row { gap: 1.5rem; }
+    .cta-strip { padding: 2.5rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-name">Meenatchi Sundari</span>
+  <div class="nav-links">
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#speaking">Speaking</a>
+    <a href="https://linkedin.com/in/meenatchisundari" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a href="https://github.com/Meenatchisundari" target="_blank" rel="noopener">GitHub ↗</a>
+    <a href="mailto:meenatchisundarimuthirulappan@gmail.com" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <span class="hero-badge-dot"></span>
+    Open to junior AI/ML Engineer roles · UK-based
+  </div>
+  <h1>AI/ML Engineer<br>specialising in LLMs &amp; RAG</h1>
+  <p class="hero-sub">
+    MSc Artificial Intelligence (GPA 3.94) from Royal Holloway, University of London.
+    I build production-grade LLM systems — from RAG pipelines and multi-agent orchestration
+    to fine-tuning and benchmarking. Invited speaker at GenAI London 2025.
+  </p>
+  <div class="hero-pills">
+    <span class="pill">Generative AI</span>
+    <span class="pill">RAG Pipelines</span>
+    <span class="pill">LLM Fine-tuning</span>
+    <span class="pill">Agentic AI</span>
+    <span class="pill">Multi-agent Systems</span>
+    <span class="pill">Prompt Engineering</span>
+    <span class="pill">NLP</span>
+    <span class="pill">Python · PyTorch</span>
+  </div>
+  <div class="hero-actions">
+    <a href="https://github.com/Meenatchisundari" target="_blank" rel="noopener" class="btn-prim">View GitHub</a>
+    <a href="https://linkedin.com/in/meenatchisundari" target="_blank" rel="noopener" class="btn-sec">LinkedIn Profile</a>
+    <a href="mailto:meenatchisundarimuthirulappan@gmail.com" class="btn-sec">Get in touch</a>
+  </div>
+  <div class="stats-row">
+    <div>
+      <div class="stat-val">3.94</div>
+      <div class="stat-lbl">MSc GPA / 4.0</div>
+    </div>
+    <div>
+      <div class="stat-val">22%</div>
+      <div class="stat-lbl">GSM8K reasoning gain</div>
+    </div>
+    <div>
+      <div class="stat-val">35%</div>
+      <div class="stat-lbl">Logical error reduction</div>
+    </div>
+    <div>
+      <div class="stat-val">200+</div>
+      <div class="stat-lbl">Conference attendees</div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div id="experience" class="section-white">
+  <div class="section-wrap">
+    <div class="section-head"><h2>Experience</h2></div>
+
+    <div class="exp-row">
+      <div>
+        <div class="exp-period">Mar 2026 – Present</div>
+        <div class="exp-co">Black Isle Group</div>
+      </div>
+      <div>
+        <div class="exp-title">AI Consultant</div>
+        <span class="exp-type">Contract · Remote</span>
+        <ul class="blist">
+          <li>Designed NLP-informed prompting frameworks grounded in cognitive communication models, improving AI response quality for a live enterprise product</li>
+          <li>Scoped a structured reasoning layer enabling non-technical users to build agentic AI interactions without specialist knowledge</li>
+          <li>Analysed conversational data to convert unstructured dialogue into structured AI design decisions; presented findings to senior leadership</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div>
+        <div class="exp-period">Jul 2025 – Present</div>
+        <div class="exp-co">Royal Holloway — GAMA Project</div>
+      </div>
+      <div>
+        <div class="exp-title">Research Assistant · Hybrid AI</div>
+        <span class="exp-type">Part-time · On-site</span>
+        <ul class="blist">
+          <li>Benchmarked LLaMA and Qwen across <span class="num">1,000+</span> structured reasoning queries, reducing inference cost while meeting accuracy targets</li>
+          <li>Achieved <span class="num">22% improvement on GSM8K</span> via LoRA/QLoRA fine-tuning + RL-based reward optimisation — presented at GenAI London 2025</li>
+          <li>Built hybrid LLM + Prolog symbolic reasoning pipelines, cutting logical error rates by <span class="num">~35%</span></li>
+          <li>Reduced research-to-insight cycle time by <span class="num">~40%</span> through reproducible Python training pipelines</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div>
+        <div class="exp-period">2024 – 2025</div>
+        <div class="exp-co">Royal Holloway — ADDRESS</div>
+      </div>
+      <div>
+        <div class="exp-title">Audio-Based AI Researcher</div>
+        <span class="exp-type">Research · On-site</span>
+        <ul class="blist">
+          <li>Designed end-to-end audio foundation model pipelines (Audio Flamingo, LLaMA-Omni, Wav2Vec2) processing <span class="num">2,000+</span> labelled samples</li>
+          <li>Improved model F1-score by <span class="num">18–25%</span> through encoder fine-tuning and dataset balancing</li>
+          <li>Managed full delivery lifecycle on Azure ML Studio, meeting all research milestones on schedule</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div>
+        <div class="exp-period">Jan 2024 – Aug 2024</div>
+        <div class="exp-co">AVASOFT Technologies</div>
+      </div>
+      <div>
+        <div class="exp-title">AI/ML Engineer Trainee</div>
+        <span class="exp-type">Full-time</span>
+        <ul class="blist">
+          <li>Built end-to-end ML pipelines covering preprocessing, feature engineering, model training, and FastAPI/Flask inference APIs</li>
+          <li>Improved pipeline performance by <span class="num">~20%</span> through code optimisation and batching; presented trade-offs to cross-functional stakeholders</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div id="projects" class="section-bg">
+  <div class="section-wrap">
+    <div class="section-head"><h2>Projects</h2></div>
+    <div class="proj-grid">
+
+      <div class="proj-card">
+        <div class="proj-tag">Multi-agent</div>
+        <div class="proj-name">Multi Minds AI</div>
+        <div class="proj-desc">LLM orchestration platform coordinating 4+ specialised agents for autonomous reasoning and task decomposition on Azure App Service.</div>
+        <div class="proj-metrics">
+          <span class="pm">+22% task accuracy</span>
+          <span class="pm">-25% inconsistency</span>
+        </div>
+        <div class="proj-stack">LangChain · LangGraph · Azure</div>
+        <a href="https://github.com/Meenatchisundari/Multi-Minds-AI" target="_blank" rel="noopener" class="proj-link">
+          github.com/Meenatchisundari/Multi-Minds-AI
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg>
+        </a>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-tag">Benchmarking</div>
+        <div class="proj-name">LLM Prompt Evaluation Framework</div>
+        <div class="proj-desc">Production-style framework evaluating 3 foundation models across 1,000+ GSM8K samples using 8+ prompting strategies including CoT and Self-Consistency.</div>
+        <div class="proj-metrics">
+          <span class="pm">74.5% GSM8K accuracy</span>
+          <span class="pm">+35% vs baseline</span>
+        </div>
+        <div class="proj-stack">Qwen · LLaMA-2 · GPT-4 · DSPy · GCP</div>
+        <a href="https://github.com/Meenatchisundari/prompt-eng-llm-gsm8k" target="_blank" rel="noopener" class="proj-link">
+          github.com/Meenatchisundari/prompt-eng-llm-gsm8k
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg>
+        </a>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-tag">RAG · LLMOps</div>
+        <div class="proj-name">Medinfobot</div>
+        <div class="proj-desc">Production-grade RAG pipeline processing 10,000+ document chunks with ChromaDB. 99%+ uptime on AWS with CloudWatch monitoring and Jenkins CI/CD.</div>
+        <div class="proj-metrics">
+          <span class="pm">-25% inference latency</span>
+          <span class="pm">99%+ uptime</span>
+        </div>
+        <div class="proj-stack">Python · Flask · ChromaDB · AWS · Jenkins</div>
+        <a href="https://github.com/Meenatchisundari/Medinfobot" target="_blank" rel="noopener" class="proj-link">
+          github.com/Meenatchisundari/Medinfobot
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg>
+        </a>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-tag">LLM Application</div>
+        <div class="proj-name">AI Study Buddy</div>
+        <div class="proj-desc">End-to-end LLM-powered learning assistant with adaptive question generation. GitHub Actions CI/CD with AWS S3 artifact versioning.</div>
+        <div class="proj-metrics">
+          <span class="pm">+18% response consistency</span>
+          <span class="pm">-45% deploy time</span>
+        </div>
+        <div class="proj-stack">LLM · AWS S3 · GitHub Actions CI/CD</div>
+        <a href="https://github.com/Meenatchisundari/AI_STUDY_BUDDY" target="_blank" rel="noopener" class="proj-link">
+          github.com/Meenatchisundari/AI_STUDY_BUDDY
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div id="skills" class="section-white">
+  <div class="section-wrap">
+    <div class="section-head"><h2>Technical skills</h2></div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="sg-title">AI &amp; Agentic frameworks</div>
+        <div class="skill-tags">
+          <span class="sk">LangChain</span>
+          <span class="sk">LangGraph</span>
+          <span class="sk">Crew.AI</span>
+          <span class="sk">DSPy</span>
+          <span class="sk">MCP architecture</span>
+          <span class="sk">Multi-agent orchestration</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-title">LLM &amp; GenAI</div>
+        <div class="skill-tags">
+          <span class="sk">LLaMA</span>
+          <span class="sk">Qwen</span>
+          <span class="sk">GPT-4</span>
+          <span class="sk">LoRA / QLoRA</span>
+          <span class="sk">RAG pipelines</span>
+          <span class="sk">Prompt engineering</span>
+          <span class="sk">LLM benchmarking</span>
+          <span class="sk">HuggingFace Transformers</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-title">ML frameworks</div>
+        <div class="skill-tags">
+          <span class="sk">PyTorch</span>
+          <span class="sk">TensorFlow</span>
+          <span class="sk">Scikit-learn</span>
+          <span class="sk">MLflow</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-title">Cloud &amp; MLOps</div>
+        <div class="skill-tags">
+          <span class="sk">AWS (EC2, S3, App Runner)</span>
+          <span class="sk">Azure ML Studio</span>
+          <span class="sk">GCP</span>
+          <span class="sk">Docker</span>
+          <span class="sk">FastAPI</span>
+          <span class="sk">Flask</span>
+          <span class="sk">Jenkins</span>
+          <span class="sk">GitHub Actions</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-title">Languages</div>
+        <div class="skill-tags">
+          <span class="sk">Python (expert)</span>
+          <span class="sk">SQL</span>
+          <span class="sk">Bash</span>
+          <span class="sk">JavaScript</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-title">Research</div>
+        <div class="skill-tags">
+          <span class="sk">Symbolic reasoning (Prolog)</span>
+          <span class="sk">A/B testing</span>
+          <span class="sk">Distributed evaluation</span>
+          <span class="sk">Anomaly detection</span>
+          <span class="sk">Quantum-security awareness</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SPEAKING & EDUCATION -->
+<div id="speaking" class="section-bg">
+  <div class="section-wrap">
+    <div class="section-head"><h2>Speaking &amp; research</h2></div>
+    <div class="speak-list">
+      <div class="speak-item">
+        <div class="speak-dot"></div>
+        <div>
+          <div class="speak-event">GenAI London 2025</div>
+          <div class="speak-desc">Presented applied research on improving LLM reasoning via structured prompting, agentic workflows, and multi-agent collaboration — 200+ industry practitioners in attendance.</div>
+        </div>
+      </div>
+      <div class="speak-item">
+        <div class="speak-dot"></div>
+        <div>
+          <div class="speak-event">Prompt Engineering Conference London 2025</div>
+          <div class="speak-desc">Delivered technical session on integrating symbolic reasoning with LLM pipelines to improve reliability, explainability, and production readiness.</div>
+        </div>
+      </div>
+      <div class="speak-item">
+        <div class="speak-dot"></div>
+        <div>
+          <div class="speak-event">GAMA Hybrid AI Framework — ongoing contributor</div>
+          <div class="speak-desc">Active contributor to hybrid LLM + symbolic reasoning systems. Academic publication in preparation on bridging R&amp;D with production AI.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 2.5rem;">
+      <div class="section-head"><h2>Education</h2></div>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-inst">Royal Holloway, University of London</div>
+          <div class="edu-deg">MSc Artificial Intelligence</div>
+          <div class="edu-date">Sep 2024 – Dec 2025</div>
+          <div class="edu-detail">
+            Autonomous Intelligent Systems · Deep Learning · NLP · Online ML<br>
+            Elected Academic Representative · Founded AI Clinic<br>
+            Awarded £1,200 Research Development Grant
+          </div>
+          <span class="gpa-badge">GPA 3.94 / 4.0</span>
+        </div>
+        <div class="edu-card">
+          <div class="edu-inst">Kumaraguru College of Technology</div>
+          <div class="edu-deg">BE Electronics &amp; Communication Engineering</div>
+          <div class="edu-date">Jun 2020 – Apr 2024</div>
+          <div class="edu-detail">
+            Robotics &amp; Automation Club<br>
+            Co-organised Python &amp; ML workshops for 30+ students<br>
+            Mahatma Gandhi Merit Scholarship — 4 consecutive years
+          </div>
+          <span class="gpa-badge">CGPA 9.47 / 10</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA FOOTER -->
+<div class="cta-strip">
+  <h2>Open to new opportunities</h2>
+  <p>Junior AI/ML Engineer roles · UK-based · Available now</p>
+  <div class="cta-links">
+    <a href="mailto:meenatchisundarimuthirulappan@gmail.com" class="cta-link">meenatchisundarimuthirulappan@gmail.com</a>
+    <a href="https://linkedin.com/in/meenatchisundari" target="_blank" rel="noopener" class="cta-link">LinkedIn</a>
+    <a href="https://github.com/Meenatchisundari" target="_blank" rel="noopener" class="cta-link">GitHub</a>
+  </div>
+</div>
+
+</body>
+</html>

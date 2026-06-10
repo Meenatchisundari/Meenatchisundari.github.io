@@ -261,6 +261,7 @@
   }
   .proj-link:hover { text-decoration: underline; }
   .proj-link svg { width: 11px; height: 11px; flex-shrink: 0; }
+  .proj-links { display: flex; gap: 12px; margin-top: auto; flex-wrap: wrap; }
 
   /* SKILLS */
   .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -528,6 +529,29 @@
   <div class="section-wrap">
     <div class="section-head"><h2>Projects</h2></div>
     <div class="proj-grid">
+
+      <div class="proj-card">
+        <div class="proj-tag">RAG · Clinical AI</div>
+        <div class="proj-name">GlycoSearch</div>
+        <div class="proj-desc">Production-quality RAG pipeline answering clinical questions about glycaemic management from 14 healthcare PDFs. Systematically A/B-tested 12 pipeline combinations — PyMuPDF + Semantic Chunking + Hybrid RRF + SBERT reranking won.</div>
+        <div class="proj-metrics">
+          <span class="pm">Faithfulness 0.966</span>
+          <span class="pm">Context Recall 1.0</span>
+          <span class="pm">MRR 1.0</span>
+          <span class="pm">Hit Rate 1.0</span>
+        </div>
+        <div class="proj-stack">LangChain · LangGraph · ChromaDB · GPT-4o · RAGAS · Streamlit</div>
+        <div class="proj-links">
+          <a href="https://glycosearch.streamlit.app" target="_blank" rel="noopener" class="proj-link">
+            Live demo ↗
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg>
+          </a>
+          <a href="https://github.com/Meenatchisundari" target="_blank" rel="noopener" class="proj-link">
+            GitHub ↗
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg>
+          </a>
+        </div>
+      </div>
 
       <div class="proj-card">
         <div class="proj-tag">Multi-agent</div>
